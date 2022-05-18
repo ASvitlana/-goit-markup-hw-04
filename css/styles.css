@@ -231,6 +231,33 @@ img {
     line-height: 1.71;
 }
 
+.specialty-item::before {
+    content: "";
+    display: block;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(245, 244, 250, 1);
+    margin-bottom: 30px;
+}
+
+.icon-antenna::before {
+    background-image: url(../images/antenna.svg);
+}
+
+.icon-clock::before {
+    background-image: url(../images/clock.svg);
+}
+
+.icon-diagram::before {
+    background-image: url(../images/diagram.svg);
+}
+
+.icon-astronaut::before {
+    background-image: url(../images/astronaut.svg);
+}
+
+
 /* СЕКЦИЯ "Чем ми занимаемся" и СЕКЦИЯ "Наша команда" */
 
 .affeirs-list {
@@ -335,9 +362,11 @@ img {
 }
 
 .button:hover,
+.button:focus,
 .button:active {
     color: var(--white-color);
     background-color: var(--blue-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list .item:not(:last-child) {
@@ -416,6 +445,12 @@ img {
     padding-bottom: 60px;
 }
 
+.footer .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
 .footer .address {
     margin-top: 20px;
     margin-bottom: 9px;
@@ -453,4 +488,48 @@ img {
 .auth-footer .auth-link:hover,
 .auth-footer .auth-link:focus {
     color: var(--blue-color);
+}
+
+.social-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--white-color);
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.social-networks {
+    margin-left: 70px;
+}
+
+.networks-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    outline: 2px solid tomato;
+}
+
+.social-item {
+    display: block;
+    height: 44px;
+    width: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-size: 20px 20px;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.social-links {
+    width: 20px;
+    height: 20px;
+    
+    
+}
+
+.social-item:not(:last-child) {
+    margin-right: 10px;
 }
