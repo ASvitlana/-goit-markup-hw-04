@@ -81,19 +81,20 @@ img {
     align-items: center;
 }
 
-.logo {
+.logo-link {
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     text-decoration: none;
+    margin-right: 93px;
 }
-.part-one {
+
+.logo-part-one {
     color: var(--blue-color);
 }
 
-.part-two {
-    margin-right: 93px;
+.logo-part-two {
     color: rgba(0, 0, 0, 1);
 }
 
@@ -138,10 +139,10 @@ img {
 }
 
 .auth .auth-link + .auth-link {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
-.auth .auth-link {
+.auth-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,16 +161,18 @@ img {
     margin-right: 10px;
 }
 
-.auth .auth-link:hover,
-.auth .auth-link:focus {
+.auth-link:hover,
+.auth-link:focus {
     color: var(--blue-color);
 }
 
-.auth .auth-link:hover .auth-icon {
+.auth-link:hover .auth-icon {
     fill: var(--blue-color);
 }
 
-
+.auth-link:focus .auth-icon {
+    fill: var(--blue-color);
+}
 
 /* ----------------------СЕКЦИЯ ШАПКА-----------------------*/
 
@@ -256,13 +259,7 @@ img {
     line-height: 1.71;
 }
 
-.specialty-icon-list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.specialty-icon-item {
+.specialty-icon-box {
     display: flex;
     width: 270px;
     height: 120px;
@@ -273,40 +270,6 @@ img {
     margin-bottom: 30px;
 }
 
-.specialty-icon-item:not(:last-child) {
-    margin-right: 30px;
-}
-
-
-
-/* ------------OLD VARIANT------------ */
-
-/* .specialty-item::before {
-    content: "";
-    display: block;
-    height: 120px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(245, 244, 250, 1);
-    border-radius: 4px;
-    margin-bottom: 30px;
-}
-
-.icon-antenna::before {
-    background-image: url(../images/antenna.svg);
-}
-
-.icon-clock::before {
-    background-image: url(../images/clock.svg);
-}
-
-.icon-diagram::before {
-    background-image: url(../images/diagram.svg);
-}
-
-.icon-astronaut::before {
-    background-image: url(../images/astronaut.svg);
-} */
 
 
 /* ----------СЕКЦИЯ "Чем ми занимаемся" и СЕКЦИЯ "Наша команда"--- */
@@ -387,7 +350,11 @@ img {
     justify-content: center;
 }
 
-.social-item {
+.social-list .social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-link {
     display: flex;
     height: 44px;
     width: 44px;
@@ -395,27 +362,15 @@ img {
     align-items: center;
     border-radius: 50%;
     cursor: pointer;
-}
-
-.social-item:not(:last-child) {
-    margin-right: 10px;
-}
-
-.icon-social {
     fill: var(--icon-color);
 }
 
-.icon-social:hover {
+.social-link:hover,
+.social-link:focus {
     fill: var(--white-color);
-}
-
-.social-item:hover {
     background-color: var(--blue-color);
 }
 
-.social-item:hover .icon-social {
-    fill: var(--white-color);
-}
 
 
 /* -----------------СЕКЦИЯ ПОСТОЯННЫЕ КЛИЕНТЫ--------------- */
@@ -427,40 +382,33 @@ img {
     cursor: pointer;
 }
 
-.clients-item {
+.clients-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc((100%-150px) / 6);
+    width: 170px;
     height: 92px;
     border: 1px solid var(--icon-color);
     border-radius: 4px;
     cursor: pointer;
-}
-
-.clients-item:not(:last-child) {
-    margin-right: 30px;
+    fill: var(--icon-color);
 }
 
 .icon-clients {
     width: 106px;
     height: 60px;
-    fill: var(--icon-color);
 }
 
-.icon-clients:hover,
-.icon-clients:focus {
+.clients-list .clients-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.clients-link:focus,
+.clients-link:hover {
     fill: var(--blue-color);
+    border: 1px solid var(--blue-color);
 }
 
-.clients-item:hover .icon-clients {
-    fill: var(--blue-color);
-}
-
-.clients-item:hover,
-.clients-item:focus {
-    border-color: var(--blue-color);
-}
 
 
 /* --------------------СТРАНИЦА ПОРТФОЛИО------------------ */
@@ -575,20 +523,7 @@ img {
     align-items: baseline;
 }
 
-.footer .address {
-    margin-top: 20px;
-    margin-bottom: 9px;
-}
-
-.auth-link.mailto {
-    display: inline-block;
-}
-
-.auth-footer .mailto {
-    margin-bottom: 9px;
-}
-
-.part-three {
+.logo-part-three {
     color: var(--white-color);
 }
 
@@ -597,9 +532,12 @@ img {
     font-size: 14px;
     font-style: normal;
     line-height: 1.71;
+    margin-top: 20px;
+    margin-bottom: 9px;
 }
 
-.auth-footer .auth-link {
+.auth-link-footer {
+    display: inline-block;
     color: rgba(255, 255, 255, 0.6);
     font-style: normal;
     font-weight: 400;
@@ -609,8 +547,12 @@ img {
     text-decoration: none;
 }
 
-.auth-footer .auth-link:hover,
-.auth-footer .auth-link:focus {
+.auth-footer .mailto {
+    margin-bottom: 9px;
+}
+
+.auth-link-footer:hover,
+.auth-link-footer:focus {
     color: var(--blue-color);
 }
 
@@ -620,8 +562,11 @@ img {
     line-height: 1.14;
     text-transform: uppercase;
     color: var(--white-color);
-    padding-bottom: 20px;
     margin: 0;
+}
+
+.social-title {
+    margin-bottom: 20px;
 }
 
 .social-networks {
@@ -632,9 +577,10 @@ img {
     display: flex;
     padding: 0;
     margin: 0;
+    margin-left: -10px;
 }
 
-.networks-item {
+.networks-link {
     display: flex;
     width: 44px;
     height: 44px;
@@ -642,55 +588,11 @@ img {
     background-color: rgba(255, 255, 255, 0.1);
     justify-content: center;
     align-items: center;
-}
-
-.networks-item:not(:last-child){
-    margin-right: 10px;
-}
-
-.icon-network {
     fill: var(--white-color);
+    margin-left: 10px;
 }
 
-.networks-item:hover,
-.networks-item:focus {
+.networks-link:hover,
+.networks-link:focus {
     background-color: var(--blue-color);
 }
-
-
-/* -------------OLD VARIANT-----------------
-.networks-item {
-    display: block;
-    height: 44px;
-    width: 44px;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-.networks-item:hover {
-    background-color: var(--blue-color);
-}
-
-.logo-instagram {
-    background-image: url(../images/instagram.svg);
-}
-
-.logo-twitter {
-    background-image: url(../images/twitter.svg);
-}
-
-.logo-facebook {
-    background-image: url(../images/facebook.svg);
-}
-
-.logo-linkedin {
-    background-image: url(../images/linkedin.svg) ;
-}
-
-.social-item:not(:last-child) {
-    margin-right: 10px;
-} */
